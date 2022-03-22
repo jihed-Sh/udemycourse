@@ -1,1 +1,14 @@
-<p>post works!</p>
+<h2>{{post?.title}}</h2>
+<p>
+    {{post?.description}}
+</p>
+<img src="{{post?.imagePath}}" 
+class="img-responsive"/>
+<p>
+   {{post?.author}}
+</p>
+<p>
+    <b>Release date:</b>{{post?.release}}
+</p>
+<button>Edit</button> | <button>Delete</button>
+<hr>
