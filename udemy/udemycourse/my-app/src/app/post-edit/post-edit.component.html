@@ -1,24 +1,27 @@
 <div class="row">
     <div class="col-md:12">
         <h3>Add Post</h3>
-        <form >
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
             <div class="from-group">
                 <label >Title</label>
-                <input  class="form-control" type="text">
+                <input  class="form-control" type="text" formControlName="title">
             </div>
             <div class="from-group">
                 <label >Description</label>
-                <textarea  class="form-control" type="text"></textarea>
+                <textarea  class="form-control" type="text" formControlName="description"></textarea>
             </div>
             <div class="from-group">
                 <label >Image path</label>
-                <input  class="form-control" type="text">
+                <input  class="form-control" type="text" formControlName="imagePath">
+                <img class="img-responsive" src="{{form.value.imagePath}}" alt="">
             </div>
 <br>
 <br>
 
-            <button class="btn btn-success" type="submit">Save</button> |
-            <button class="btn btn-primary" type="submit">Clear</button>
+            <button class="btn btn-success" type="submit" [disabled]="form.invalid">
+                Save
+            </button> |
+            <button class="btn btn-primary" type="reset">Clear</button>
         </form>
     </div>
 </div>
